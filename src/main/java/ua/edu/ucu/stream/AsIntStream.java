@@ -33,7 +33,7 @@ public class AsIntStream implements IntStream {
             throw new IllegalArgumentException();
         }
         else {
-           res = sum()/count();
+           res = (double)sum()/count();
         }
         return res;
 
