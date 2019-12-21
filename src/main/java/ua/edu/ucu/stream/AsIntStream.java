@@ -96,13 +96,13 @@ public class AsIntStream implements IntStream {
 
     @Override
     public IntStream filter(IntPredicate predicate) {
-        AsIntStream stream2 = new AsIntStream();
+        AsIntStream streamSecond = new AsIntStream();
         for (int i : lst) {
             if (predicate.test(i)){
-                stream2.lst.add(i);
+                streamSecond.lst.add(i);
             }
         }
-        return stream2;
+        return streamSecond;
     }
 
     @Override
@@ -114,23 +114,23 @@ public class AsIntStream implements IntStream {
 
     @Override
     public IntStream map(IntUnaryOperator mapper) {
-        AsIntStream lst2 = new AsIntStream();
+        AsIntStream lstSecond = new AsIntStream();
         for (int i : lst) {
-            lst2.lst.add(mapper.apply(i));
+            lstSecond.lst.add(mapper.apply(i));
         }
-        return lst2;
+        return lstSecond;
 
     }
 
     @Override
     public IntStream flatMap(IntToIntStreamFunction func) {
-        ArrayList<IntStream> lst2 = new ArrayList<>();
+        ArrayList<IntStream> lstSecond = new ArrayList<>();
         for (Integer i : lst) {
-            lst2.add(func.applyAsIntStream(i));
+            lstSecond.add(func.applyAsIntStream(i));
         }
 
         ArrayList<Integer> strFmap = new ArrayList<>();
-        for (IntStream i : lst2) {
+        for (IntStream i : lstSecond) {
             for (int j : i.toArray()){
                 strFmap.add(j);
             }
