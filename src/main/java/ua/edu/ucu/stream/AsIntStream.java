@@ -12,7 +12,7 @@ public class AsIntStream implements IntStream {
         this.lst = new ArrayList<Integer>();
     }
 
-    private AsIntStream(ArrayList<Integer> mylst){
+    private AsIntStream(ArrayList<Integer> mylst) {
         this.lst = mylst;
     }
 
@@ -33,7 +33,7 @@ public class AsIntStream implements IntStream {
             throw new IllegalArgumentException();
         }
         else {
-           res = (double)sum()/count();
+           res = (double) sum()/count();
         }
         return res;
 
@@ -47,7 +47,7 @@ public class AsIntStream implements IntStream {
         else {
             int maxim = Integer.MIN_VALUE;
             for(int i: lst){
-                if (i > maxim){
+                if (i > maxim) {
                     maxim = i;
                 }
             }
@@ -64,8 +64,8 @@ public class AsIntStream implements IntStream {
 
         else {
             int minim = Integer.MAX_VALUE;
-            for(int i: lst){
-                if (i < minim){
+            for(int i: lst) {
+                if (i < minim) {
                     minim = i;
                 }
             }
@@ -75,7 +75,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public long count() {
-        if (lst.isEmpty()){
+        if (lst.isEmpty()) {
             throw new IllegalArgumentException();
         }
         return lst.size();
@@ -83,7 +83,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public Integer sum() {
-        if (lst.isEmpty()){
+        if (lst.isEmpty()) {
             throw new IllegalArgumentException();
         }
         int sum = 0;
@@ -98,7 +98,7 @@ public class AsIntStream implements IntStream {
     public IntStream filter(IntPredicate predicate) {
         AsIntStream streamSecond = new AsIntStream();
         for (int i : lst) {
-            if (predicate.test(i)){
+            if (predicate.test(i)) {
                 streamSecond.lst.add(i);
             }
         }
@@ -131,7 +131,7 @@ public class AsIntStream implements IntStream {
 
         ArrayList<Integer> strFmap = new ArrayList<>();
         for (IntStream i : lstSecond) {
-            for (int j : i.toArray()){
+            for (int j : i.toArray()) {
                 strFmap.add(j);
             }
         }
@@ -152,7 +152,7 @@ public class AsIntStream implements IntStream {
         int lg = lst.size();
         int[] res = new int[lg];
         int ind = 0;
-        for (int i: lst){
+        for (int i: lst) {
             res[ind] = i;
             ind++;
         }
