@@ -46,7 +46,7 @@ public class AsIntStream implements IntStream {
         }
         else {
             int maxim = Integer.MIN_VALUE;
-            for(int i: lst){
+            for (int i: lst){
                 if (i > maxim) {
                     maxim = i;
                 }
@@ -64,7 +64,7 @@ public class AsIntStream implements IntStream {
 
         else {
             int minim = Integer.MAX_VALUE;
-            for(int i: lst) {
+            for (int i: lst) {
                 if (i < minim) {
                     minim = i;
                 }
